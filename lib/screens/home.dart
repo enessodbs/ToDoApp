@@ -106,7 +106,7 @@ class _HomeState extends State<Home> {
                 )),
                 Container(
                   margin: EdgeInsets.only(bottom: 20, right: 20),
-                  child: a(
+                  child: ElevatedButton(
                     child: Text(
                       '+',
                       style: TextStyle(fontSize: 40, color: Colors.white),
