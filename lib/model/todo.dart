@@ -1,8 +1,17 @@
-import 'package:flutter/material.dart';
+import 'package:hive/hive.dart';
+part 'todo.g.dart';
 
+
+@HiveType(typeId: 0)
 class ToDo{
+  
+  @HiveField(0)
   String? id;
+
+  @HiveField(1)
   String? todoText;
+
+  @HiveField(2)
   bool isDone;
 
   ToDo({
@@ -12,10 +21,6 @@ class ToDo{
   });
 
   static List<ToDo> todoList(){
-    return[
-
-      ToDo(id: "01", todoText: "Morning Excercise",isDone: true),
- 
-    ];
+    return[];
   }
 }
