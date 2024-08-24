@@ -91,7 +91,8 @@ class _HomeState extends State<Home> {
                     right: 20,
                     left: 20,
                   ),
-                  padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
                   decoration: BoxDecoration(
                       color: Colors.white,
                       boxShadow: const [
@@ -185,14 +186,14 @@ class _HomeState extends State<Home> {
       title: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          const Icon(Icons.menu, color: black, size: 30),
+          //  const Icon(Icons.menu, color: black, size: 30),
           SizedBox(
             height: 40,
             width: 40,
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(20),
-              child: Image.asset('assets/pp.png'),
-            ),
+            // child: ClipRRect(
+            //   borderRadius: BorderRadius.circular(20),
+            //   child: Image.asset('assets/pp.png'),
+            // ),
           )
         ],
       ),
