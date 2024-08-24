@@ -183,7 +183,7 @@ class _HomeState extends State<Home> {
     return AppBar(
       backgroundColor: backgroundColor,
       elevation: 0,
-      title: Row(
+      title: const Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           //  const Icon(Icons.menu, color: black, size: 30),

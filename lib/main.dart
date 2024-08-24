@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:todo_app/model/todo.dart';
 import 'package:todo_app/screens/splash.dart';
@@ -23,12 +22,13 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setSystemUIOverlayStyle(
-        const SystemUiOverlayStyle(statusBarColor: Colors.transparent));
-    return const MaterialApp(
+   
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
+
+      theme: ThemeData(primarySwatch: Colors.blue),
       title: "ToDo App",
-      home: SplashScreen(),
+      home: const SplashScreen(),
     );
   }
 }
