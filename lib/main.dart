@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:todo_app/model/todo.dart';
-import 'package:todo_app/screens/home.dart';
+import 'package:todo_app/screens/splash.dart';
 
 Future<void> main(List<String> args) async {
   // Initialize Flutter binding
@@ -28,7 +28,7 @@ class _MyAppState extends State<MyApp> {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "ToDo App",
-      home: Home(),
+      home: SplashScreen(),
     );
   }
 }
