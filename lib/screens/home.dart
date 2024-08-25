@@ -206,17 +206,17 @@ class _HomeState extends State<Home> {
     return AppBar(
       backgroundColor: backgroundColor,
       elevation: 0,
-      title: const Row(
+      title: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          //  const Icon(Icons.menu, color: black, size: 30),
+          const Icon(Icons.menu, color: black, size: 30),
           SizedBox(
             height: 40,
             width: 40,
-            // child: ClipRRect(
-            //   borderRadius: BorderRadius.circular(20),
-            //   child: Image.asset('assets/pp.png'),
-            // ),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(20),
+              child: Image.asset('assets/pp.png'),
+            ),
           )
         ],
       ),

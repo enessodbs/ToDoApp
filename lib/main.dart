@@ -28,7 +28,7 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(primarySwatch: Colors.blue),
-      title: "ToDo App",
+      title: "ToDo & Notes",
       home: const SplashScreen(),
     );
   }
