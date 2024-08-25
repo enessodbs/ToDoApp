@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
+import 'package:todo_app/screens/notes.dart';
 import '../model/todo.dart';
 import '../constans/colors.dart';
 import '../widgets/todo_items.dart';
@@ -59,14 +60,36 @@ class _HomeState extends State<Home> {
                 searchBox(),
                 Expanded(
                   child: ListView(
+                    padding: const EdgeInsets.only(bottom: 80),
                     children: [
-                      Container(
-                        margin: const EdgeInsets.only(top: 50, bottom: 20),
-                        child: const Text(
-                          "All ToDos",
-                          style: TextStyle(
-                              fontSize: 30, fontWeight: FontWeight.w500),
-                        ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Container(
+                            margin: const EdgeInsets.only(top: 50, bottom: 20),
+                            child: const Text(
+                              "All ToDos",
+                              style: TextStyle(
+                                  fontSize: 30, fontWeight: FontWeight.w500),
+                            ),
+                          ),
+                          Container(
+                            margin: const EdgeInsets.only(top: 50, bottom: 20),
+                            child: ElevatedButton(
+                                onPressed: () {
+                                  Navigator.of(context).push(MaterialPageRoute(
+                                      builder: (context) => const Notes()));
+                                },
+                                style: ElevatedButton.styleFrom(
+                                    backgroundColor: blue,
+                                    minimumSize: const Size(60, 60),
+                                    elevation: 10),
+                                child: const Icon(
+                                  Icons.note_add_sharp,
+                                  color: Colors.white,
+                                )),
+                          )
+                        ],
                       ),
                       for (ToDo todos in _foundToDo.reversed)
                         TodoItem(
@@ -126,7 +149,7 @@ class _HomeState extends State<Home> {
                       style: TextStyle(fontSize: 40, color: Colors.white),
                     ),
                   ),
-                )
+                ),
               ],
             ),
           )
