@@ -13,7 +13,7 @@ class Notes extends StatefulWidget {
 }
 
 class _NotesState extends State<Notes> {
-  late final Note note;
+  Note? note; // `late` kaldırıldı ve nullable (null olabilen) hale getirildi.
   final _box = Hive.box<Note>('Notes');
   List<Note> _foundNote = [];
   bool sorted = false;
@@ -61,8 +61,8 @@ class _NotesState extends State<Notes> {
 
   void _deleteNote(int index) {
     setState(() {
-      note = _foundNote[index];
-      _box.delete(note.id); // Belirli bir notu Hive'dan silmek için ID kullan
+      note = _foundNote[index]; // `note` değişkenini başlatıyoruz.
+      _box.delete(note!.id); // `note` nullable olduğundan `!` kullanıldı.
       _updateToDoList();
     });
   }
