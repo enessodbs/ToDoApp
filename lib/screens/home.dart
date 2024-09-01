@@ -17,6 +17,7 @@ class _HomeState extends State<Home> {
   final _box = Hive.box<ToDo>('Todos');
   List<ToDo> _foundToDo = [];
   final _todoController = TextEditingController();
+  bool sorted = false;
 
   @override
   void initState() {
@@ -28,6 +29,16 @@ class _HomeState extends State<Home> {
     setState(() {
       _foundToDo = _box.values.toList();
     });
+  }
+
+  _sortNotes(List<ToDo> todos) {
+    if (sorted) {
+      todos.sort((a, b) => a.id!.compareTo(b.id!));
+    } else {
+      todos.sort((b, a) => a.id!.compareTo(b.id!));
+    }
+    sorted = !sorted;
+    return todos;
   }
 
   void _runFilter(String enterKeyWorkd) {
@@ -207,17 +218,22 @@ class _HomeState extends State<Home> {
       backgroundColor: backgroundColor,
       elevation: 0,
       title: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisAlignment: MainAxisAlignment.end,
         children: [
-          const Icon(Icons.menu, color: black, size: 30),
-          SizedBox(
-            height: 40,
-            width: 40,
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(20),
-              child: Image.asset('assets/pp.png'),
-            ),
-          )
+          IconButton(
+              onPressed: () {
+                setState(() {
+                  _foundToDo = _sortNotes(_foundToDo);
+                });
+              },
+              icon: const SizedBox(
+                width: 40,
+                height: 40,
+                child: Icon(
+                  Icons.sort,
+                  color: Colors.black,
+                ),
+              )),
         ],
       ),
     );
