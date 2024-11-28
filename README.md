@@ -1,16 +1,9 @@
 # todo_app
 
-A new Flutter project.
+Bu proje, kendimi geliştirmek için oluşturduğum bir ToDo uygulamasıdır. Bu uygulama sayesinde, hem ToDo'larınızı hem de Notlarınızı, Flutter'ın Hive veritabanı ile telefonunuzun yerel hafızasında saklayabilirsiniz.
 
-## Getting Started
+Bu projede kullandığım teknolojiler:
 
-This project is a starting point for a Flutter application.
+• Hive: Kullanıcının telefonunun yerel hafızasında verileri güvenli bir şekilde tutmasını sağladım. Hive veritabanı, hızlı ve yerel veri yönetimi sunarak, uygulamanın verimli çalışmasına katkı sağladı.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+• Flutter Splash Screen: Uygulama açılışında kullanıcıya hoş bir görüntü sunmak için Flutter'ın splash screen özelliğini kullandım.
